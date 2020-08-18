@@ -12,12 +12,15 @@ pipeline {
 
         stage('pr') {
           steps {
-            echo 'print'
+            echo 'print "${aditya}"'
           }
         }
 
       }
     }
 
+  }
+  environment {
+    aditya = 'aditya'
   }
 }
