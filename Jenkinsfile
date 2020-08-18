@@ -2,8 +2,20 @@ pipeline {
   agent any
   stages {
     stage('print') {
-      steps {
-        echo 'hiii'
+      parallel {
+        stage('print') {
+          steps {
+            echo 'hiii'
+            echo 'hii'
+          }
+        }
+
+        stage('pr') {
+          steps {
+            echo 'print'
+          }
+        }
+
       }
     }
 
